@@ -8,3 +8,4 @@ Mono.Security.dll       --- 链接 Postgres 数据使用的
 Npgsql.dll              --- 链接 Postgres 数据使用的
 ToolsX.dll              --- 插件主体
 ToolsX.AddIn            --- VS 加载插件的引导文件
+postgres.sql            --- postgres数据库的表结构
