@@ -37,10 +37,11 @@ namespace ToolsX
         public void Init()
         {
             /* 绑定需要监听的开发环境事件 */
-            // _applicationObject.Events.SelectionEvents.OnChange += new _dispSelectionEvents_OnChangeEventHandler(SelectionEvents_OnChange);
             try
             {
                 db = new database();
+                db.initdatabase();
+
                 util = new utils();
                 m_formAdd = new FormAdd();
                 m_formCheck = new FormCheck();
@@ -126,7 +127,7 @@ namespace ToolsX
         public void InsertATip(Tip tip)
         {
             /* 准备插入语句 */
-            string strSql = " INSERT INTO public.tbl_toolx_tips(\"SHEETID\", \"SOLUTION\", \"FILEPATH\", \"DESCRIPTION\", \"USER\", \"KEYSTRING\") ";
+            string strSql = " INSERT INTO tbl_toolx_tips(\"SHEETID\", \"SOLUTION\", \"FILEPATH\", \"DESCRIPTION\", \"USER\", \"KEYSTRING\") ";
             strSql += "VALUES ( \'"
                 + tip.sheetid + "\', \'"
                 + tip.solution + "\', \'"
@@ -141,7 +142,7 @@ namespace ToolsX
 
         public void DeleteATip(string strSheetID)
         {
-            string sql = "DELETE FROM public.tbl_toolx_tips	WHERE  LOWER(\"SHEETID\") = LOWER(\'" + strSheetID + "\');";
+            string sql = "DELETE FROM tbl_toolx_tips WHERE  LOWER(\"SHEETID\") = LOWER(\'" + strSheetID + "\');";
             db.ExecuteNonQuery(sql);
         }
 
@@ -156,7 +157,7 @@ namespace ToolsX
             string strSolution = util.GetCurSolution();
 
             /* 组装模糊查询语句 */
-            string strSql = "SELECT \"SHEETID\", \"SOLUTION\", \"FILEPATH\", \"DESCRIPTION\", \"USER\", \"STATUS\", \"KEYSTRING\" FROM PUBLIC.TBL_TOOLX_TIPS ";
+            string strSql = "SELECT \"SHEETID\", \"SOLUTION\", \"FILEPATH\", \"DESCRIPTION\", \"USER\", \"STATUS\", \"KEYSTRING\" FROM TBL_TOOLX_TIPS ";
             strSql += " WHERE LOWER(\"SOLUTION\") = LOWER(\'"
                 + strSolution + "\') AND ( LOWER(\"DESCRIPTION\") LIKE LOWER(\'%"
                 + strKeystring + "%\') OR  LOWER(\"KEYSTRING\") LIKE LOWER(\'%"
@@ -263,7 +264,7 @@ namespace ToolsX
                             }
                             else
                             {
-                                if (MessageBox.Show("代码注记点在本机代码中未找到,确认在其他代码分支也不存在的话建议删除，删除 ？ ", "警告：", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                                if (MessageBox.Show("代码注记点在本机代码中未找到,确认在其他代码分支也不存在的话建议删除,删除 ？ ", "警告：", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
                                 {
                                     SingleManager.getInstance().DeleteATip(tip.sheetid);
                                 }
@@ -286,7 +287,7 @@ namespace ToolsX
             try
             {
                 /* 根据sheetid 查找 tip */
-                string sql = "SELECT \"SHEETID\", \"SOLUTION\", \"FILEPATH\", \"DESCRIPTION\", \"USER\", \"KEYSTRING\" FROM PUBLIC.TBL_TOOLX_TIPS WHERE ";
+                string sql = "SELECT \"SHEETID\", \"SOLUTION\", \"FILEPATH\", \"DESCRIPTION\", \"USER\", \"KEYSTRING\" FROM TBL_TOOLX_TIPS WHERE ";
                 sql += " LOWER( \"SHEETID\" ) =  LOWER(\'" + strSheetID + "\')";
 
                 DataSet ds = db.ExecuteQuery(sql);
@@ -319,8 +320,6 @@ namespace ToolsX
                 return true;
             }
         }
-
-
 
         [DllImport("kernel32.dll", CharSet = CharSet.Unicode)]
         private static extern int GetPrivateProfileString(string section, string key, string defval, StringBuilder retval, int size, string filepath);

@@ -1,0 +1,12 @@
+D:\Tips\ToolsX\bin\ToolsX.dll
+D:\Tips\ToolsX\obj\Release\ResolveAssemblyReference.cache
+D:\Tips\ToolsX\obj\Release\ToolsX.csproj.ResolveComReference.cache
+D:\Tips\ToolsX\obj\Release\ToolsX.FormAdd.resources
+D:\Tips\ToolsX\obj\Release\ToolsX.FormCheck.resources
+D:\Tips\ToolsX\obj\Release\ToolsX.FormDMap.resources
+D:\Tips\ToolsX\obj\Release\ToolsX.FormExport.resources
+D:\Tips\ToolsX\obj\Release\ToolsX.FormSearch.resources
+D:\Tips\ToolsX\obj\Release\ToolsX.Properties.Resources.resources
+D:\Tips\ToolsX\obj\Release\ToolsX.csproj.GenerateResource.Cache
+D:\Tips\ToolsX\obj\Release\ToolsX.dll
+D:\Tips\ToolsX\bin\System.Data.SQLite3.dll

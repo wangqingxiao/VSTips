@@ -1,0 +1,16 @@
+D:\Tips\ToolsX\bin\ToolsX.dll
+D:\Tips\ToolsX\bin\ToolsX.pdb
+D:\Tips\ToolsX\obj\Debug\ResolveAssemblyReference.cache
+D:\Tips\ToolsX\obj\Debug\ToolsX.csproj.ResolveComReference.cache
+D:\Tips\ToolsX\obj\Debug\ToolsX.FormAdd.resources
+D:\Tips\ToolsX\obj\Debug\ToolsX.FormCheck.resources
+D:\Tips\ToolsX\obj\Debug\ToolsX.FormDMap.resources
+D:\Tips\ToolsX\obj\Debug\ToolsX.FormExport.resources
+D:\Tips\ToolsX\obj\Debug\ToolsX.FormSearch.resources
+D:\Tips\ToolsX\obj\Debug\ToolsX.Properties.Resources.resources
+D:\Tips\ToolsX\obj\Debug\ToolsX.csproj.GenerateResource.Cache
+D:\Tips\ToolsX\obj\Debug\ToolsX.dll
+D:\Tips\ToolsX\obj\Debug\ToolsX.pdb
+D:\Tips\ToolsX\bin\SQLite.Designer.dll
+D:\Tips\ToolsX\bin\SQLite.Designer.pdb
+D:\Tips\ToolsX\bin\SQLite.Designer.xml

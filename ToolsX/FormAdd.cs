@@ -1,8 +1,9 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 using EnvDTE;
 using EnvDTE80;
-using ToolsX;
+
 namespace ToolsX
 {
     public partial class FormAdd : Form
@@ -30,6 +31,8 @@ namespace ToolsX
 
         private void BTN_ADD_Click(object sender, EventArgs e)
         {
+
+
             try
             {
                 /* 先隐藏，再存储，这样用户体验更好 */
@@ -37,7 +40,7 @@ namespace ToolsX
 
                 /* 写入到数据库里 */
                 string strDesc = textDesc.Text.Trim();
-                string strSelection = textSelection.Text.Trim().Substring(0, 4096);
+                string strSelection = textSelection.Text.Trim();//.Substring(0, 4096);
                 string strSolution = textSolution.Text.Trim();
                 string strFilePath = textPath.Text.Trim();
 
@@ -106,7 +109,6 @@ namespace ToolsX
 
         public void initParams()
         {
-
             textSelection.Text = "";
             textPath.Text = "";
             try
@@ -149,7 +151,7 @@ namespace ToolsX
             }
             catch (Exception exp)
             {
-               // MessageBox.Show(exp.ToString());
+                MessageBox.Show(exp.ToString());
             }
         }
 

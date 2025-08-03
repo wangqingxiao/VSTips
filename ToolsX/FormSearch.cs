@@ -48,7 +48,7 @@ namespace ToolsX
             }
             catch (Exception exp)
             {
-                // MessageBox.Show(exp.ToString());
+                MessageBox.Show(exp.ToString());
             }
         }
 
